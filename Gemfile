@@ -66,3 +66,5 @@ group :test do
 end
 
 gem "inertia_rails", "~> 3.12"
+
+gem "vite_rails", "~> 3.0"
