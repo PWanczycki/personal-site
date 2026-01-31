@@ -4,7 +4,7 @@ interface HomeProps {
   name?: string
 }
 
-function Home({ name }: HomeProps) {
+const Home = ({ name }: HomeProps)=> {
   return (
     <div>
       <Head title="Philip Wanczycki - Software Developer" />
