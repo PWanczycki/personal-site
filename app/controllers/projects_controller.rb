@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
+    render inertia: "Project/ProjectDetails", props: {project: @project}
   end
 
   # GET /projects/new
