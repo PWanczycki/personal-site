@@ -18,7 +18,8 @@ const ProjectIndex = ({ projects }: ProjectIndexProps) => {
             <br/>
           </div>
         ))}
-        <Link href="/">Home</Link>
+        <Link href={"/projects/new"}>New project</Link>
+        <Link href={"/"}>Home</Link>
       </div>
     );
   }
