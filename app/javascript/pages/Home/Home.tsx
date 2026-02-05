@@ -1,21 +1,17 @@
 import { Head } from "@inertiajs/react";
 
 interface HomeProps {
-  name?: string
+  name?: string;
 }
 
-const Home = ({ name }: HomeProps)=> {
+const Home = ({ name }: HomeProps) => {
   return (
     <div>
       <Head title="Philip Wanczycki - Software Developer" />
 
       <div>
         <h1>Philip Wanczycki</h1>
-        {name && (
-          <p>
-            Hello {name}!
-          </p>
-        )}
+        {name && <p>Hello {name}!</p>}
         <p>
           I am a software developer with a variety of interests, including
           artificial intelligence, cybersecurity, and web development.
@@ -27,6 +23,6 @@ const Home = ({ name }: HomeProps)=> {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

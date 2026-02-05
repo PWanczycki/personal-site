@@ -1,4 +1,4 @@
-import {Head, Link} from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import { Project } from "../../types/Project";
 
 interface ProjectIndexProps {
@@ -11,15 +11,17 @@ const ProjectIndex = ({ projects }: ProjectIndexProps) => {
   function renderProjects() {
     return (
       <div>
-        {projects.map(project => (
+        {projects.map((project) => (
           // TODO: replace with project card
           <div>
-            <Link key={project.id} href={"/projects/" + project.id}>{project.title}</Link>
-            <br/>
+            <Link key={project.id} href={"/projects/" + project.id}>
+              {project.title}
+            </Link>
+            <br />
           </div>
         ))}
         <Link href={"/projects/new"}>New project</Link>
-        <br/>
+        <br />
         <Link href={"/"}>Home</Link>
       </div>
     );
@@ -34,6 +36,6 @@ const ProjectIndex = ({ projects }: ProjectIndexProps) => {
       {renderProjects()}
     </div>
   );
-}
+};
 
 export default ProjectIndex;
