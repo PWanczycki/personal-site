@@ -6,7 +6,7 @@ interface ProjectIndexProps {
 }
 
 const ProjectIndex = ({ projects }: ProjectIndexProps) => {
-  // console.log(projects);
+  // TODO: implement notice
 
   function renderProjects() {
     return (
