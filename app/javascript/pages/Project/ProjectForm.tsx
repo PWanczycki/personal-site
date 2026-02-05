@@ -1,15 +1,33 @@
 import { Form } from "@inertiajs/react";
+import { Project } from "../../types/Project";
 
-const ProjectForm = () => {
+interface ProjectFormProps {
+  project?: Project;
+}
+
+const ProjectForm = ({ project }: ProjectFormProps) => {
+  const actionRoute = project ? `/projects/${project.id}` : "/projects";
+  const method = project ? "put" : "post";
+  const submitText = project ? "Update" : "Create";
+
   // TODO: render error messages (through inertia Form)
 
   return (
-    <Form action="/projects" method="post">
+    <Form action={actionRoute} method={method}>
       <label htmlFor="title">Title</label>
-      <input type="text" id="title" name="title" />
+      <input
+        type="text"
+        id="title"
+        name="title"
+        defaultValue={project?.title}
+      />
       <label htmlFor="description">Description</label>
-      <textarea id="description" name="description" />
-      <button type="submit">Create</button>
+      <textarea
+        id="description"
+        name="description"
+        defaultValue={project?.description}
+      />
+      <button type="submit">{submitText}</button>
     </Form>
   );
 };
