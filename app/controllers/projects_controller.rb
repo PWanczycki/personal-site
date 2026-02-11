@@ -3,20 +3,24 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @projects = Project.all
+    # TODO: Add JSON support
+    render inertia: "Project/ProjectIndex", props: { projects: Project.all }
   end
 
-  # GET /projects/1 or /projects/1.json
+  # GET /projects/1
   def show
+    # TODO: Add JSON support
+    render inertia: "Project/ProjectDetails", props: { project: @project }
   end
 
   # GET /projects/new
   def new
-    @project = Project.new
+    render inertia: "Project/NewProject"
   end
 
   # GET /projects/1/edit
   def edit
+    render inertia: "Project/EditProject", props: { project: @project }
   end
 
   # POST /projects or /projects.json
