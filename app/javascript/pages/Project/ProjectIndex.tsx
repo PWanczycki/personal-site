@@ -13,10 +13,9 @@ const ProjectIndex = ({ projects }: ProjectIndexProps) => {
       <div>
         {projects.map((project) => (
           // TODO: replace with project card
-          <div>
-            <Link key={project.id} href={"/projects/" + project.id}>
-              {project.title}
-            </Link>
+          <div key={project.id}>
+            // TODO: set up typed routes (js-routes gem)
+            <Link href={"/projects/" + project.id}>{project.title}</Link>
             <br />
           </div>
         ))}

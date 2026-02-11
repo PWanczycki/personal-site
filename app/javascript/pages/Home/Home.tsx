@@ -1,4 +1,4 @@
-import { Head } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 
 interface HomeProps {
   name?: string;
@@ -19,7 +19,7 @@ const Home = ({ name }: HomeProps) => {
           <br />
           Feel free to browse my projects below!
         </p>
-        <a href="/projects">Projects</a>
+        <Link href="/projects">Projects</Link>
       </div>
     </div>
   );
