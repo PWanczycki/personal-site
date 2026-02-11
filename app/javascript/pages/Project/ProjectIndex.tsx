@@ -1,4 +1,4 @@
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 import { Project } from "../../types/Project";
 
 interface ProjectIndexProps {
@@ -6,7 +6,7 @@ interface ProjectIndexProps {
 }
 
 const ProjectIndex = ({ projects }: ProjectIndexProps) => {
-  // TODO: implement notice
+  const { flash } = usePage();
 
   function renderProjects() {
     return (
@@ -30,6 +30,8 @@ const ProjectIndex = ({ projects }: ProjectIndexProps) => {
   return (
     <div>
       <Head title="Projects" />
+
+      {flash.notice && <div>{flash.notice}</div>}
 
       <h1>Projects</h1>
 

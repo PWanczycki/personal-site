@@ -1,16 +1,18 @@
 import { Project } from "../../types/Project.ts";
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 
 interface ProjectDetailsProps {
   project: Project;
 }
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
-  // TODO: implement notice
+  const { flash } = usePage();
 
   return (
     <div>
       <Head title={project.title} />
+
+      {flash.notice && <div>{flash.notice}</div>}
 
       <h2>{project.title}</h2>
       <p>{project.description}</p>
