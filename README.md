@@ -1,24 +1,46 @@
-# README
+# Philip Wanczycki's Personal Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Local Setup
 
-Things you may want to cover:
+### 1. Install dependencies
 
-* Ruby version
+```
+bundle install
+npm install
+```
 
-* System dependencies
+### 2. Setup DB
 
-* Configuration
+```
+bin/rails db:prepare
+```
 
-* Database creation
+### 3. (Optional) Configure the Rails server port
 
-* Database initialization
+Create a `.env` file in the project's root directory with the following entry
 
-* How to run the test suite
+```
+SERVER_PORT=3030 # or your preferred port
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### 4. Start the Rails server and Vite dev server
 
-* Deployment instructions
+```
+bin/dev
+```
 
-* ...
+## Test Suite
+
+You can run the test suite with
+
+```
+bin/rails db:test:prepare test
+```
+
+## Things to note
+
+- Ruby version 3.4.7
+
+- Rails version 8.1.1
+
+- Deployment instructions TBD
