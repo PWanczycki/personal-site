@@ -43,4 +43,6 @@ bin/rails db:test:prepare test
 
 - Rails version 8.1.1
 
+- Node version 25.6.1 (npm 11.9.0)
+
 - Deployment instructions TBD
