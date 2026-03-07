@@ -1,6 +1,7 @@
 import { createInertiaApp } from "@inertiajs/react";
 import { createElement, ReactNode } from "react";
 import { createRoot } from "react-dom/client";
+import NavbarLayout from "../layouts/NavbarLayout";
 
 // Temporary type definition, until @inertiajs/react provides one
 type ResolvedComponent = {
@@ -28,11 +29,8 @@ createInertiaApp({
       console.error(`Missing Inertia page component: '${name}.tsx'`);
     }
 
-    // To use a default layout, import the Layout component
-    // and use the following line.
-    // see https://inertia-rails.dev/guide/pages#default-layouts
-    //
-    // page.default.layout ||= (page) => createElement(Layout, null, page)
+    page.default.layout ||= (page: any) =>
+      createElement(NavbarLayout, null, page);
 
     return page;
   },
