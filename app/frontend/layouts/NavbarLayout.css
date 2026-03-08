@@ -1,0 +1,32 @@
+main {
+  width: 100%;
+  height: max-content;
+  display: grid;
+  grid-template-areas: "nav article";
+  grid-template-columns: 200px auto;
+}
+
+nav {
+  /* height: 100%; /* Full height */
+  /* overflow: auto; /* Enable scrolling if the sidenav has too much content */
+  grid-area: nav;
+  height: 100vh;
+  background-color: lightgray;
+}
+
+article {
+  grid-area: article;
+  height: 100vh;
+}
+
+nav > a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+nav > a:hover {
+  background-color: #555555;
+  color: white;
+}

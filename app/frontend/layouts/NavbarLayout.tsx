@@ -1,6 +1,8 @@
 import { Link } from "@inertiajs/react";
 import { ReactNode } from "react";
 
+import "./NavbarLayout.css";
+
 interface NavbarLayoutProps {
   children?: ReactNode;
 }
