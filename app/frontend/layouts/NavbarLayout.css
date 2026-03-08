@@ -1,9 +1,10 @@
 main {
   width: 100%;
-  height: max-content;
+  height: 100vh;
   display: grid;
   grid-template-areas: "nav article";
   grid-template-columns: 200px auto;
+  grid-template-rows: 1fr;
 }
 
 nav {
@@ -16,7 +17,8 @@ nav {
 
 article {
   grid-area: article;
-  height: 100vh;
+  height: 100%;
+  overflow: auto;
 }
 
 nav > a {
