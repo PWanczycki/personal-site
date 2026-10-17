@@ -3,7 +3,7 @@ import ProjectForm from "./ProjectForm";
 const NewProject = () => {
   return (
     <div>
-      <ProjectForm />
+      <ProjectForm cancelPath={"/projects"} />
     </div>
   );
 };

@@ -17,9 +17,9 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       <h2>{project.title}</h2>
       <p>{project.description}</p>
 
-      <Link href={`/projects/${project.id}/edit`}>Edit</Link>
+      <Link href={`/projects/${project.id}/edit`} as={"button"}>Edit</Link>
       <br />
-      <Link href={`/projects/${project.id}`} method="delete" as="button">
+      <Link href={`/projects/${project.id}`} method={"delete"} as={"button"}>
         Destroy
       </Link>
     </div>
