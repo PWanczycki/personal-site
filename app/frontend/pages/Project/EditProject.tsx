@@ -11,7 +11,6 @@ const EditProject = ({ project }: EditProjectProps) => {
     <>
       <ProjectForm project={project} />
       <Link href={`/projects/${project.id}`}>Show this project</Link>
-      <Link href={"/projects"}>Back to projects</Link>
     </>
   );
 };

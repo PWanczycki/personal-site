@@ -19,8 +19,6 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 
       <Link href={`/projects/${project.id}/edit`}>Edit</Link>
       <br />
-      <Link href={"/projects"}>Back</Link>
-      <br />
       <Link href={`/projects/${project.id}`} method="delete" as="button">
         Destroy
       </Link>
