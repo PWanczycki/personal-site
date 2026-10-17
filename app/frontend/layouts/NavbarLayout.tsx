@@ -13,7 +13,7 @@ const NavbarLayout = ({ children }: NavbarLayoutProps) => {
       <nav>
         <Link href="/">Home</Link>
         <Link href="/projects">Projects</Link>
-        <Link href="/blog">Blog</Link>
+        {/*<Link href="/blog">Blog</Link>*/}
       </nav>
       <article>{children}</article>
     </main>
