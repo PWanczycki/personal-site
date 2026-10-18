@@ -12,9 +12,9 @@ const Home = ({ name }: HomeProps) => {
       <Head title="Philip Wanczycki - Software Developer" />
 
       <div className={styles.center}>
-        <h1>Philip Wanczycki</h1>
+        <h1 className={styles.h1}>Philip Wanczycki</h1>
         {name && <p>Hello {name}!</p>}
-        <p>
+        <p className={styles.p}>
           I am a software developer with a variety of interests, including
           artificial intelligence, cybersecurity, and web development.
         </p>

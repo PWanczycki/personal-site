@@ -1,6 +1,8 @@
 import {Form, Link} from "@inertiajs/react";
 import { Project } from "../../types/Project";
 
+import styles from "./Project.module.css";
+
 interface ProjectFormProps {
   project?: Project;
   cancelPath: string;
@@ -15,7 +17,7 @@ const ProjectForm = ({ project, cancelPath }: ProjectFormProps) => {
 
   return (
     <>
-      <Form action={actionRoute} method={method}>
+      <Form action={actionRoute} method={method} className={styles.form}>
         <label htmlFor="title">Title</label>
         <input
           type="text"
@@ -29,9 +31,11 @@ const ProjectForm = ({ project, cancelPath }: ProjectFormProps) => {
           name="description"
           defaultValue={project?.description}
         />
-        <button type="submit">{submitText}</button>
+        <span className={styles.center}>
+          <button type="submit">{submitText}</button>
+          <Link href={cancelPath} as={"button"}>Cancel</Link>
+        </span>
       </Form>
-      <Link href={cancelPath} as={"button"}>Cancel</Link>
     </>
   );
 };

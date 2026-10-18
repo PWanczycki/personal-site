@@ -78,3 +78,12 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+button {
+  margin: 10px;
+}
+
+.flash {
+  padding: 10px 20px;
+  background-color: darkseagreen;
+}
