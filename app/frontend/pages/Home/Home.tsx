@@ -1,6 +1,6 @@
 import { Head } from "@inertiajs/react";
 
-import "./Home.css"
+import styles from "./Home.module.css"
 
 interface HomeProps {
   name?: string;
@@ -11,7 +11,7 @@ const Home = ({ name }: HomeProps) => {
     <div>
       <Head title="Philip Wanczycki - Software Developer" />
 
-      <div className={"center"}>
+      <div className={styles.center}>
         <h1>Philip Wanczycki</h1>
         {name && <p>Hello {name}!</p>}
         <p>
