@@ -11,9 +11,12 @@ const NavbarLayout = ({ children }: NavbarLayoutProps) => {
   return (
     <main>
       <nav>
-        <Link href="/">Home</Link>
-        <Link href="/projects">Projects</Link>
-        {/*<Link href="/blog">Blog</Link>*/}
+        <h1>Philip Wanczycki</h1>
+	<div>
+          <Link href="/">Home</Link>
+          <Link href="/projects">Projects</Link>
+          {/*<Link href="/blog">Blog</Link>*/}
+	</div>
       </nav>
       <article>{children}</article>
     </main>

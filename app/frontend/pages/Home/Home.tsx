@@ -12,11 +12,12 @@ const Home = ({ name }: HomeProps) => {
       <Head title="Philip Wanczycki - Software Developer" />
 
       <div className={styles.center}>
-        <h1 className={styles.h1}>Philip Wanczycki</h1>
         {name && <p>Hello {name}!</p>}
         <p className={styles.p}>
-          I am a software developer with a variety of interests, including
-          artificial intelligence, cybersecurity, and web development.
+	  Hello! I'm a software developer working at Fullscript, mainly doing backend product work in Rails. I also love music and camping. 
+        </p>
+	<p className={styles.p}>
+	  This site is still in progress so this home page is bare, but feel free to check out my projects and blog.
         </p>
       </div>
     </div>
