@@ -72,11 +72,20 @@ h6 {
 }
 
 /*
-  10. Create a root stacking context
+  10. Create a root stacking contex
 */
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* Default font */
+body {
+  font-size: 1em;
+  font-family: Palatino, "URW Palladio L", serif;
+  font-weight: 600;
+  color: #173636;
+  background-color: #fff4e6;
 }
 
 button {
