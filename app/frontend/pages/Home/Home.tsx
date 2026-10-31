@@ -1,4 +1,6 @@
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
+
+import styles from "./Home.module.css"
 
 interface HomeProps {
   name?: string;
@@ -9,17 +11,14 @@ const Home = ({ name }: HomeProps) => {
     <div>
       <Head title="Philip Wanczycki - Software Developer" />
 
-      <div>
-        <h1>Philip Wanczycki</h1>
+      <div className={styles.center}>
         {name && <p>Hello {name}!</p>}
-        <p>
-          I am a software developer with a variety of interests, including
-          artificial intelligence, cybersecurity, and web development.
-          <br />
-          <br />
-          Feel free to browse my projects below!
+        <p className={styles.p}>
+	  Hello! I'm a software developer working at Fullscript, mainly doing backend product work in Rails. I also love music and camping. 
         </p>
-        <Link href="/projects">Projects</Link>
+	<p className={styles.p}>
+	  This site is still in progress so this home page is bare, but feel free to check out my projects and blog.
+        </p>
       </div>
     </div>
   );

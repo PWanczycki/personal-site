@@ -1,6 +1,10 @@
 import { createInertiaApp } from "@inertiajs/react";
 import { createElement, ReactNode } from "react";
 import { createRoot } from "react-dom/client";
+// TODO: remove ts-ignores in file
+// @ts-ignore
+import NavbarLayout from "../layouts/NavbarLayout";
+import "~/application.css";
 
 // Temporary type definition, until @inertiajs/react provides one
 type ResolvedComponent = {
@@ -20,6 +24,7 @@ createInertiaApp({
   // progress: false,
 
   resolve: (name: string) => {
+    // @ts-ignore
     const pages = import.meta.glob<ResolvedComponent>("../pages/**/*.tsx", {
       eager: true,
     });
@@ -28,11 +33,8 @@ createInertiaApp({
       console.error(`Missing Inertia page component: '${name}.tsx'`);
     }
 
-    // To use a default layout, import the Layout component
-    // and use the following line.
-    // see https://inertia-rails.dev/guide/pages#default-layouts
-    //
-    // page.default.layout ||= (page) => createElement(Layout, null, page)
+    page.default.layout ||= (page: any) =>
+      createElement(NavbarLayout, null, page);
 
     return page;
   },
