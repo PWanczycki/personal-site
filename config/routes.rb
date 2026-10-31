@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resource :session
+  resources :passwords, param: :token
   get "inertia-example", to: "inertia_example#index"
   resources :projects
   get "home/index"
