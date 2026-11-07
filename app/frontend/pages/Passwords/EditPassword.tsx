@@ -15,7 +15,7 @@ const EditPassword = ({ emailAddress }: EditPasswordProps) => {
 
       <h1>Update your password</h1>
 
-      // TODO: add token param to form request, match field restrictions
+      {/*TODO: add token param to action route, match field restrictions*/}
       <Form action="/passwords" method="put">
         <label htmlFor="password">Email:</label>
         <input type="text" name="password" />
