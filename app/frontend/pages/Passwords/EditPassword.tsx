@@ -18,9 +18,9 @@ const EditPassword = ({ emailAddress }: EditPasswordProps) => {
       {/*TODO: add token param to action route, match field restrictions*/}
       <Form action="/passwords" method="put">
         <label htmlFor="password">Email:</label>
-        <input type="text" name="password" />
+        <input type="password" name="password" />
         <label htmlFor="password_confirmation">Email:</label>
-        <input type="text" name="password_confirmation" />
+        <input type="password" name="password_confirmation" />
         <button type="submit">Save</button>
       </Form>
     </>

@@ -18,7 +18,7 @@ const NewPassword = ({ emailAddress }: NewPasswordProps) => {
       {/*TODO: match form field restrictions*/}
       <Form action="/passwords" method="post">
         <label htmlFor="email_address">Email:</label>
-        <input type="text" name="email_address" defaultValue={emailAddress} />
+        <input type="email" name="email_address" defaultValue={emailAddress} />
         <button type="submit">Email reset instructions</button>
       </Form>
     </>

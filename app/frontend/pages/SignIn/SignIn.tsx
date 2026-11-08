@@ -17,9 +17,9 @@ const SignIn = ({ emailAddress }: SignInProps) => {
       {/*TODO: match field restrictions*/}
       <Form action="/session" method="post">
         <label htmlFor="email_address">Email:</label>
-        <input type="text" name="email_address" defaultValue={emailAddress} />
+        <input type="email" name="email_address" defaultValue={emailAddress} />
         <label htmlFor="password">Password:</label>
-        <input type="text" name="password" />
+        <input type="password" name="password" />
         <button type="submit">Login</button>
       </Form>
 
