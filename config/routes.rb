@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :projects
 
+  # TODO: alias sign in and sign up
   resource :session
   resources :passwords, param: :token
   resource :registration, only: %i[new create]

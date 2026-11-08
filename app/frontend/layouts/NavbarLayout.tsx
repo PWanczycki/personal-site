@@ -1,5 +1,6 @@
 import { Link } from "@inertiajs/react";
 import { ReactNode } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 import "./NavbarLayout.css";
 
@@ -8,6 +9,8 @@ interface NavbarLayoutProps {
 }
 
 const NavbarLayout = ({ children }: NavbarLayoutProps) => {
+  const { user } = useAuth();
+
   return (
     <main>
       <nav>
@@ -16,14 +19,14 @@ const NavbarLayout = ({ children }: NavbarLayoutProps) => {
           <Link href="/">Home</Link>
           <Link href="/projects">Projects</Link>
           {/*<Link href="/blog">Blog</Link>*/}
-          {/*{user ? (*/}
+          {user ? (
             <Link href="/session" method="delete" as="button">Sign out</Link>
-          {/*) : (*/}
+          ) : (
             <>
               <Link href="/session/new" as="button">Log in</Link>
               <Link href="/registration/new" as="button">Sign up</Link>
             </>
-          {/*)}*/}
+          )}
         </div>
       </nav>
       <article>{children}</article>
