@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   # TODO: alias sign in and sign up
   resource :session
+  # TODO: why plural resource on password?
   resources :passwords, param: :token
   resource :registration, only: %i[new create]
 end
