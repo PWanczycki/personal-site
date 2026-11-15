@@ -96,3 +96,16 @@ button {
   padding: 10px 20px;
   background-color: darkseagreen;
 }
+
+.alert {
+  background-color: pink;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  margin: 10px;
+}

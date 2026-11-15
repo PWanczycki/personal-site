@@ -1,5 +1,6 @@
-import { Project } from "../../types/Project.ts";
 import { Head, Link, usePage } from "@inertiajs/react";
+import { Project } from "@/types/Project";
+import { useAuth } from "@/hooks/useAuth";
 
 import styles from "./Project.module.css"
 
@@ -9,6 +10,7 @@ interface ProjectDetailsProps {
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   const { flash } = usePage();
+  const { isAdmin } = useAuth();
 
   return (
     <div>
@@ -20,10 +22,15 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       <p className={styles.p}>{project.description}</p>
 
       <span className={styles.center}>
-        <Link href={`/projects/${project.id}/edit`} as={"button"}>Edit</Link>
-        <Link href={`/projects/${project.id}`} method={"delete"} as={"button"}>
-          Destroy
-        </Link>
+        <Link href="/projects" as={"button"}>Back</Link>
+        { isAdmin &&
+          <>
+            <Link href={`/projects/${project.id}/edit`} as={"button"}>Edit</Link>
+            <Link href={`/projects/${project.id}`} method={"delete"} as={"button"}>
+              Destroy
+            </Link>
+          </>
+        }
       </span>
     </div>
   );

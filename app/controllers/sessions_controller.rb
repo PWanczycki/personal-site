@@ -1,0 +1,24 @@
+class SessionsController < ApplicationController
+  require_unauthenticated_access only: %i[ new create ]
+  # TODO: harden rate limiting: per-IP only, uses Rails.cache so needs a shared store
+  rate_limit to: 10, within: 3.minutes, only: :create, with: -> { redirect_to new_session_path, alert: "Try again later." }
+
+  def new
+    render inertia: "SignIn/SignIn", props: { emailAddress: params[:email_address] }
+  end
+
+  def create
+    if user = User.authenticate_by(params.permit(:email_address, :password))
+      start_new_session_for user
+      redirect_to after_authentication_url
+    else
+      # TODO: redirect with email prefilled (maybe with flash or session instead of with exposed query param)
+      redirect_to new_session_path, alert: "Try another email address or password."
+    end
+  end
+
+  def destroy
+    terminate_session
+    redirect_to root_path, status: :see_other
+  end
+end

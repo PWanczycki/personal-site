@@ -1,6 +1,7 @@
 require "test_helper"
 
 class ProjectsControllerTest < ActionDispatch::IntegrationTest
+  # TODO: add tests (member and unauth access)
   setup do
     @project = projects(:one)
   end
@@ -10,12 +11,16 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
+  test "should get new when user is admin" do
+    sign_in_as_admin
+
     get new_project_url
     assert_response :success
   end
 
-  test "should create project" do
+  test "should create project when user is admin" do
+    sign_in_as_admin
+
     assert_difference("Project.count") do
       post projects_url, params: { project: { description: @project.description, title: @project.title } }
     end
@@ -28,17 +33,21 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should get edit when user is admin" do
+    sign_in_as_admin
     get edit_project_url(@project)
     assert_response :success
   end
 
-  test "should update project" do
+  test "should update project when user is admin" do
+    sign_in_as_admin
     patch project_url(@project), params: { project: { description: @project.description, title: @project.title } }
     assert_redirected_to project_url(@project)
   end
 
-  test "should destroy project" do
+  test "should destroy project when user is admin" do
+    sign_in_as_admin
+
     assert_difference("Project.count", -1) do
       delete project_url(@project)
     end

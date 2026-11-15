@@ -1,5 +1,6 @@
 import { Link } from "@inertiajs/react";
 import { ReactNode } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 import "./NavbarLayout.css";
 
@@ -8,15 +9,28 @@ interface NavbarLayoutProps {
 }
 
 const NavbarLayout = ({ children }: NavbarLayoutProps) => {
+  const { user } = useAuth();
+
+  // TODO: render flash once in navbar instead of per page
+
   return (
     <main>
       <nav>
         <h1>Philip Wanczycki</h1>
-	<div>
+        <div>
           <Link href="/">Home</Link>
           <Link href="/projects">Projects</Link>
           {/*<Link href="/blog">Blog</Link>*/}
-	</div>
+          {user ? (
+            <Link href="/session" method="delete" as="button">Sign out</Link>
+          ) : (
+            <>
+              <Link href="/session/new" as="button">Log in</Link>
+              {/* Public sign ups disabled */}
+              {/*<Link href="/registration/new" as="button">Sign up</Link>*/}
+            </>
+          )}
+        </div>
       </nav>
       <article>{children}</article>
     </main>

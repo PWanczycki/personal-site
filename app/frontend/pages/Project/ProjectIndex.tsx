@@ -1,5 +1,6 @@
 import { Head, Link, usePage } from "@inertiajs/react";
-import { Project } from "../../types/Project";
+import { Project } from "@/types/Project";
+import { useAuth } from "@/hooks/useAuth";
 
 import styles from "./Project.module.css";
 
@@ -9,11 +10,12 @@ interface ProjectIndexProps {
 
 const ProjectIndex = ({ projects }: ProjectIndexProps) => {
   const { flash } = usePage();
+  const { isAdmin } = useAuth();
 
   function renderProjects() {
     return (
       <div className={styles.projects}>
-        <Link href={"/projects/new"} as={"button"}>New project</Link>
+        { isAdmin && <Link href={"/projects/new"} as={"button"}>New project</Link> }
         {projects.map((project) => (
           // TODO: replace with project card
           <div key={project.id}>

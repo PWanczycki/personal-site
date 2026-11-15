@@ -2,8 +2,6 @@
 
 Rails.application.routes.draw do
   get "inertia-example", to: "inertia_example#index"
-  resources :projects
-  get "home/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -16,4 +14,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  get "home/index"
+
+  resources :projects
+
+  resource :session, only: %i[new create destroy]
+
+  # Public sign up and forgot password routes disabled
+  # resources :passwords, param: :token, only: %i[ new create edit update ]
+  # resource :registration, only: %i[new create]
 end
