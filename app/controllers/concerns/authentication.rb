@@ -40,6 +40,7 @@ module Authentication
     end
 
     def start_new_session_for(user)
+      # maybe needs to call reset_session???
       user.sessions.create!(user_agent: request.user_agent, ip_address: request.remote_ip).tap do |session|
         Current.session = session
         cookies.signed[:session_id] = { value: session.id, httponly: true, same_site: :lax, secure: Rails.env.production?, expires: 2.weeks.from_now }

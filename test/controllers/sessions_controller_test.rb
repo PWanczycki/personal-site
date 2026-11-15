@@ -1,6 +1,7 @@
 require "test_helper"
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
+  # TODO: add tests (rate limiting, session destroyed after reset, etc.)
   setup { @user = User.take }
 
   test "new" do

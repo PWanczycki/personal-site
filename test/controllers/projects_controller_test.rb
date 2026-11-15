@@ -1,6 +1,7 @@
 require "test_helper"
 
 class ProjectsControllerTest < ActionDispatch::IntegrationTest
+  # TODO: add tests (member and unauth access)
   setup do
     @project = projects(:one)
   end
