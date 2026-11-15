@@ -31,6 +31,7 @@ module Authentication
     end
 
     def request_authentication
+      # TODO: only save return url for GET requests
       session[:return_to_after_authenticating] = request.url
       redirect_to new_session_path
     end

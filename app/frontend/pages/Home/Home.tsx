@@ -3,12 +3,8 @@ import { useAuth } from "@/hooks/useAuth"
 
 import styles from "./Home.module.css"
 
-interface HomeProps {
-  name?: string;
-}
-
-const Home = ({ name }: HomeProps) => {
-  const { user, isAdmin } = useAuth();
+const Home = () => {
+  const { user } = useAuth();
 
   return (
     <div>

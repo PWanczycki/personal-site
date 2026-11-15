@@ -11,6 +11,8 @@ interface NavbarLayoutProps {
 const NavbarLayout = ({ children }: NavbarLayoutProps) => {
   const { user } = useAuth();
 
+  // TODO: render flash once in navbar instead of per page
+
   return (
     <main>
       <nav>
