@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "home/index"
 
   resources :projects
+  resources :posts
 
   resource :session, only: %i[new create destroy]
 
