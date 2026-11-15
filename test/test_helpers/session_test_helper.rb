@@ -8,6 +8,10 @@ module SessionTestHelper
     end
   end
 
+  def sign_in_as_admin
+    sign_in_as users(:admin)
+  end
+
   def sign_out
     Current.session&.destroy!
     cookies.delete("session_id")

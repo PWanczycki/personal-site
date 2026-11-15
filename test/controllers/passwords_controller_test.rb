@@ -36,12 +36,12 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_password_path
 
     follow_redirect!
-    assert_notice "reset link is invalid"
+    assert_alert "reset link is invalid"
   end
 
   test "update" do
     assert_changes -> { @user.reload.password_digest } do
-      put password_path(@user.password_reset_token), params: { password: "new", password_confirmation: "new" }
+      put password_path(@user.password_reset_token), params: { password: "newpassword", password_confirmation: "newpassword" }
       assert_redirected_to new_session_path
     end
 
@@ -57,11 +57,6 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
     end
 
     follow_redirect!
-    assert_notice "Passwords did not match"
+    assert_alert "Passwords did not match"
   end
-
-  private
-    def assert_notice(text)
-      assert_select "div", /#{text}/
-    end
 end
