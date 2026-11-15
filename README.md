@@ -39,9 +39,9 @@ bin/rails db:test:prepare test
 
 ## Things to note
 
-- Ruby version 3.4.7
+- Ruby version 4.0.9
 
-- Rails version 8.1.1
+- Rails version 8.1.4.1
 
 - Node version 25.6.1 (npm 11.9.0)
 
