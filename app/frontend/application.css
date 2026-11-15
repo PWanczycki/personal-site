@@ -100,3 +100,12 @@ button {
 .alert {
   background-color: pink;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  margin: 10px;
+}

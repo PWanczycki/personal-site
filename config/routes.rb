@@ -20,8 +20,9 @@ Rails.application.routes.draw do
 
   # TODO: alias sign in
   resource :session
+
+  # Public sign up and forgot password routes disabled
   # TODO: why plural resource on passwords?
-  resources :passwords, param: :token
-  # Public sign in route disabled
+  # resources :passwords, param: :token
   # resource :registration, only: %i[new create]
 end

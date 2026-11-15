@@ -22,7 +22,8 @@ const SignIn = ({ emailAddress }: SignInProps) => {
         <button type="submit">Login</button>
       </Form>
 
-      <Link href="/passwords/new">Forgot password?</Link>
+      {/* Public forgot password route disabled */}
+      {/*<Link href="/passwords/new">Forgot password?</Link>*/}
     </div>
   );
 };
