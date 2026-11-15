@@ -14,12 +14,11 @@ const SignIn = ({ emailAddress }: SignInProps) => {
       {flash.notice && <div className={"flash"}>{flash.notice}</div>}
       {flash.alert && <div className={"flash alert"}>{flash.alert}</div>}
 
-      {/*TODO: match field restrictions*/}
       <Form action="/session" method="post">
-        <label htmlFor="email_address">Email:</label>
-        <input type="email" name="email_address" defaultValue={emailAddress} />
-        <label htmlFor="password">Password:</label>
-        <input type="password" name="password" />
+        {/*<label htmlFor="email_address">Email:</label>*/}
+        <input type="email" name="email_address" required autoFocus autoComplete="username" placeholder="Enter your email address" defaultValue={emailAddress} />
+        {/*<label htmlFor="password">Password:</label>*/}
+        <input type="password" name="password" required autoComplete="current-password" placeholder="Enter your password" maxLength={72} />
         <button type="submit">Login</button>
       </Form>
 

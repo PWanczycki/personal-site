@@ -4,7 +4,7 @@ interface EditPasswordProps {
   token: string;
 }
 
-const EditPassword = ({ emailAddress }: EditPasswordProps) => {
+const EditPassword = ({ token }: EditPasswordProps) => {
   const { flash } = usePage();
 
   return (
@@ -15,12 +15,11 @@ const EditPassword = ({ emailAddress }: EditPasswordProps) => {
 
       <h1>Update your password</h1>
 
-      {/*TODO: add token param to action route, match field restrictions*/}
-      <Form action="/passwords" method="put">
-        <label htmlFor="password">Email:</label>
-        <input type="password" name="password" />
-        <label htmlFor="password_confirmation">Email:</label>
-        <input type="password" name="password_confirmation" />
+      <Form action={`/passwords/${token}`} method="put">
+        {/*<label htmlFor="password">Email:</label>*/}
+        <input type="password" name="password" required autoComplete="new-password" placeholder="Enter new password" maxLength={72} />
+        {/*<label htmlFor="password_confirmation">Email:</label>*/}
+        <input type="password" name="password_confirmation" required autoComplete="new-password" placeholder="Repeat new password" maxLength={72} />
         <button type="submit">Save</button>
       </Form>
     </>
