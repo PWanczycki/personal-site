@@ -11,7 +11,7 @@ class RegistrationsController < ApplicationController
       start_new_session_for user
       redirect_to root_path
     else
-      redirect_to new_registration_path, inertia: { errors: user.errors }
+      redirect_to new_registration_path, alert: user.errors.to_a.map(&:to_s).to_s # TODO: sanitize error messages
     end
   end
 

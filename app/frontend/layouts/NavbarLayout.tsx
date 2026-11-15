@@ -24,7 +24,8 @@ const NavbarLayout = ({ children }: NavbarLayoutProps) => {
           ) : (
             <>
               <Link href="/session/new" as="button">Log in</Link>
-              <Link href="/registration/new" as="button">Sign up</Link>
+              {/* Public sign ups disabled */}
+              {/*<Link href="/registration/new" as="button">Sign up</Link>*/}
             </>
           )}
         </div>
