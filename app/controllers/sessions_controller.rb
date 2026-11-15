@@ -1,10 +1,9 @@
 class SessionsController < ApplicationController
-  allow_unauthenticated_access only: %i[ new create ]
+  require_unauthenticated_access only: %i[ new create ]
   # TODO: harden rate limiting: per-IP only, uses Rails.cache so needs a shared store
   rate_limit to: 10, within: 3.minutes, only: :create, with: -> { redirect_to new_session_path, alert: "Try again later." }
 
   def new
-    # TODO: redirect if already signed in
     render inertia: "SignIn/SignIn", props: { emailAddress: params[:email_address] }
   end
 
